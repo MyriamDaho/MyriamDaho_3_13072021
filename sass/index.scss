@@ -1,5 +1,9 @@
 @import"Utils/variables";
-@import"Base/general-settings";
+@import"Utils/mixins";
+@import"Base/base";
 @import"Components/buttons";
 @import"Layout/header";
-@import"Layout/body";
+@import"Layout/footer";
+@import"pages/accueil/restaurant.scss";
+@import"pages/accueil/recherche.scss";
+@import"pages/accueil/fonctionnement.scss";

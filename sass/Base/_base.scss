@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: $font-roboto;
+    box-sizing: border-box;
+   width: 100%;
+   margin: auto;
+}
+h1{
+    font-size: $font-size3;
+    margin: 30px 50px 15px 40px;
+}
+h2{
+  font-size:$font-size1;
+  margin-bottom: 5px;
+ }
+   
+
+p{
+  font-size: $font-size1; 
+  font-weight: 300;
+  margin-top: 0px;
+   }
+
+   li,fas{
+    color:rgb(126, 126, 126);
+    padding-bottom: 10px;
+}

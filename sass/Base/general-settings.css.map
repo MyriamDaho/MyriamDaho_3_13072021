@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,WAAW,EAAE,mBAAmB;EAChC,UAAU,EAAE,UACZ;CACH",
-    "sources": [
-        "general-settings.scss"
-    ],
-    "names": [],
-    "file": "general-settings.css"
-}

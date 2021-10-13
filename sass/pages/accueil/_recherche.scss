@@ -1,0 +1,18 @@
+.search{
+    @include flexColumn;
+    text-align: center;
+    background-color: $backgroundcolor-primary;
+}
+.location{
+    display: flex;
+    justify-content: center;
+    height: 15px;
+    padding: 20px;
+    background-color:$backgroundcolor-tertiary ;
+    box-Shadow:inset 0px 3px 10px #d4d4d4;   
+}
+.location-text{      
+    font-size: $font-size1;
+    font-weight: 600;
+    margin-left:$margin-left;
+ }

@@ -1,0 +1,8 @@
+@mixin boxShadow{
+    box-shadow:  0px 3px 10px #e5e5e5;
+}
+
+@mixin flexColumn{
+    display:flex;
+    flex-direction: column;
+}
