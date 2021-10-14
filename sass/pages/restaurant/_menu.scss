@@ -1,0 +1,85 @@
+.Menu_pic img{
+    display:flex;
+    object-fit: cover;
+    width:100%;
+   }
+
+.Menu_container{
+    background-color: $backgroundcolor-primary;
+    border-radius: 50px 50px 0 0;
+    position: relative;
+    top: -95px;
+   padding-left: 10px;
+   padding-right: 10px;
+  
+}
+
+.Menu_title{
+    font-family:$font-shrikhand;
+    font-weight: 300;
+    padding-top: 30px;
+    margin-left: 0px;
+    font-size: 1.6em;
+   
+}
+.far{
+    position: absolute;
+    right:2em;
+    top: 1.5em;
+    font-size: 1.5em;
+    color: #777;
+}
+
+h2{
+    padding-bottom: 15px;
+    font-weight:200;
+}
+.dish_title:before {
+    content: "";
+    position: absolute;
+    width:41px;
+    height:20px;    
+    border-bottom: 3px solid $color-tertiary;
+    padding:2px;
+    }
+
+    .dish{
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+        height: 70px;
+        width:100%;
+        border-radius: $borderRadius;
+        border: 2px #bfbfbf;
+        background-color: $backgroundcolor-secondary;
+        margin: 0px 20px 20px 0px;
+        @include boxShadow;
+       }
+    .dish_item{
+        @include flexColumn;
+    }  
+    
+h3{
+    display: flex;
+    font-size: 1.1em;
+    margin:10px;
+}
+p{
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+.value{
+   display:flex;       
+   align-items: flex-end;
+   font-size: 1em;
+   font-weight: bold;
+   
+}
+.price{
+    margin: 8px 20px;
+    font-weight: bold;
+}
+
+ .dessert{
+     padding-bottom: 20px;
+ }
