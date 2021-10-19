@@ -1,34 +1,30 @@
 footer {
    
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         background-color: rgb(53, 53,53);
         padding: 20px 20px; 
- }  
- .footer_title{
-      display: flex;
-      height: 20px;
-      color: #ffffff;
-      font-family: shrikhand, sans-serif;
-      font-weight: lighter;
-      padding-bottom: 0px;
-      margin-top: 0px;
+   
+        .footer_title{
+        @include flexRowCenter;
+        
+        height: 20px;
+        color: #ffffff;
+        font-family: shrikhand, sans-serif;
+        font-weight: lighter;
+        padding-bottom: 0px;
+        margin-top: 0px;
         }
 
-
-  footer ul{
-   padding-left: 0px;
-  }  
-  
- 
- 
-
-  
-  a{
+        footer ul{
+        padding-left: 0px;
+        }  
+    
+        a{
         text-decoration: none;
         color: #ffffff;          
         }
-  footer .fas{
+}
+footer .fas{
         padding-right: 10px;
-        font-size: small;
-  }      
+        font-size: 0.9em;
+        }      

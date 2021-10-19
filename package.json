@@ -4,7 +4,7 @@
   "description": "OhMyFood project ",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/index.scss:./css/index.css "
+    "sass": "sass --watch ./sass/index.scss:./css/index.css ./sass/restaurant.scss:./css/restaurant.css"
   },
   "author": "Myriam Daho",
   "license": "ISC"

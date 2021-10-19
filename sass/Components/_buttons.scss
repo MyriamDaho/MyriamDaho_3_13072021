@@ -1,18 +1,13 @@
-
-
-
 .btn{
-
- display: flex;   
- justify-content: center;
- align-items: center;
- height: 50px;
- border-radius: 50px;
+@include flexRowCenter; 
+justify-content: center;
+height: 50px;
+border-radius: 50px;
  border: none;
  width: 60%;
  color:$textnumber-color;
  background:linear-gradient(to top,#9356dc,#ff79da);
- margin:10px 70px 50px;
-font-size: 1rem;
+ margin:20px 70px  30px 70px;
+font-size: map-get($fontSize,text);
 @include boxShadow;
 }

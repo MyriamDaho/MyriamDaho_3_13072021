@@ -1,60 +1,57 @@
-.function-bloc{
+.function__bloc{
     @include flexColumn;
-    margin-left:$margin-left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-    .title{
-     margin-left: 0px;
-     padding-top: 20px;
+    margin:30px 25px;
+
+  .title{
+     padding-left: 0px;
+     padding-right: 0px;
  }
- .guide{
-     list-style-type: none;
-     padding-left: 15px;
- }
- .guide__step{
-  display: flex;   
-  align-items: center;
-  height: 70px;
-  width:100%;
-  border-radius: $borderRadius;
-  border: 2px #bfbfbf;
-  background-color: $backgroundcolor-primary;
-  gap: 20px;
-  margin: 0px 20px 20px 0px;
-  @include boxShadow;
- }
- .guide__step--number{
-   display: flex;
-   position: relative;
-   right:15px;
-   background-color:rgb(147,86,220);
-   color:$textnumber-color;
-   border-radius: 80%;
-   padding: 3px 9px;
- }
+    
+       .guide__step{
+      @include flexRowCenter;   
+      height: 70px;
+      width:100%;
+      border-radius: $borderRadius;
+      border: 2px #bfbfbf;
+      background-color: $backgroundcolor-primary;
+      gap: 20px;
+      margin: 0px 20px 20px 0px;
+      @include boxShadow;
+      }
  
- .guide__step-colored{
-   display: flex;   
-   align-items: center;
-   height: 70px;
-   width: 100%;
-   border-radius: $borderRadius;
-   border: 2px #bfbfbf;
-   font-size: 1rem;
-   background-color: rgb(245 237 255);
-   gap:20px;
-   margin: 0px 20px 20px 0px;
-   box-shadow: 3px 3px 10px #bfbfbf;
-  }
-.guide__step-colored,fas{
-  color:rgb(147,86,220)
-}
+      .guide__step--colored{
+        @include flexRowCenter;   
+        height: 70px;
+        width: 100%;
+        border-radius: $borderRadius;
+        border: 2px #bfbfbf;
+        font-size: map-get($fontSize,text);
+        background-color: rgb(245 237 255);
+        gap:20px;
+        margin: 0px 20px 20px 0px;
+        box-shadow: 3px 3px 10px #bfbfbf;
+  
+            .guide__step--colored,fas{
+            color:rgb(147,86,220)
+            }
+      
+  }    
+      .guide__step--number{
+        position: relative;
+        right:15px;
+        background-color:rgb(147,86,220);
+        color:$textnumber-color;
+        border-radius: 80%;
+        padding: 3px 9px;
+      }
+      .function__text{
+      font-size:map-get($fontSize,text);
+      font-weight: 600;
+      color:black;
+      }
+}    
+            
+         
 
 
-.function-text{
-   font-size: 1em;
-   font-weight: 600;
-   color:black;
-  padding-top: 20px;
-}
+

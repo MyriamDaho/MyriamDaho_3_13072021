@@ -1,34 +1,52 @@
 header{
-  display: flex;
-  flex-direction: row;
+  @include flexRowCenter;
   justify-content: space-around;
-  align-items: center;
 }
 body{
-    display: flex;
-    flex-direction: column;
+    @include flexColumn;
     font-family: $font-roboto;
     box-sizing: border-box;
-   width: 100%;
-   margin: auto;
+    width: 100%;
+    margin: auto;
 }
-
-
+main{
+  @include flexColumn;
+}
 h1{
-    font-size: $font-size3;
-    margin: 30px 50px 15px 40px;
+  display: block;
+  padding: 10px 50px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size:map-get($fontSize,heading);
 }
+ 
 h2{
-  font-size:$font-size1;
-  margin-bottom: 5px;
+  font-size:map-get($fontSize,title);
+  display: block;
+   margin-top: 5px;
+   margin-bottom : 5px;     
  }
    
+h3{
+  font-size:map-get($fontSize,text);
+  font-weight: 400;
+  margin-inline-end: 10px;
+  margin-inline-start: 10px;
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+}  
+h3:before {
+  content: "";
+  position: absolute;
+  width:41px;
+  height:20px;    
+  border-bottom: 3px solid $color-tertiary;
+  padding:2px;
+  }
 
-p{
-  font-size: $font-size1; 
-  font-weight: 300;
-  margin-top: 0px;
-   }
+h4{
+  font-size:map-get($fontSize,title);
+}
 li{
   margin-bottom: 10px;
 }
@@ -36,6 +54,20 @@ li{
     color:rgb(126, 126, 126);
    }
 
-ul{
-  list-style-type: none;
+   ul{
+    @include flexColumn;
+    list-style-type: none;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+   }
+
+   p{
+      display: block;
+      margin-block-start: 0px;
+      margin-block-end: 0px;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
 }
+  
+   
