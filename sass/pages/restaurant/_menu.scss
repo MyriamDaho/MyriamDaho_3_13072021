@@ -10,12 +10,25 @@
     background-color: $backgroundcolor-primary;
     border-radius: 50px 50px 0 0;
    margin-top: -50px;
-   padding:20px 10px;
+   padding:20px 20px;
+   @include Medium-screen{
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 10px;
+       width:100%;      
+   }
   
         .bloc_title{
         @include flexRowCenter;
-        justify-content: space-between;
-        padding: 20px 10px;
+            justify-content: space-between;
+        @include tablet{
+            padding:10px 20px;
+            }
+        @include Medium-screen{
+            width:100%;
+            padding: 0px 40px 0px 40px;
+        }
 
             .title{
             font-family:$font-shrikhand;
@@ -32,6 +45,13 @@
         @include flexColumn;
         gap: 15px;
         padding:15px 0px;
+        @include tablet{
+            padding: 20px;          
+        }
+        @include Medium-screen{
+            width:30%;
+            padding-left: 0px;
+        }
 
            
             h3:before {
@@ -60,6 +80,15 @@
         
                       .dish__plus{
                       font-size:0.9em;
+                      @include Medium-screen{
+                          width:200px;
+                          text-overflow: ellipsis;
+                          overflow: hidden;
+                          white-space: nowrap;
+                      }
+                      @include Large-screen{
+                          width: 300px;
+                      }
                       }
                 }  
                 .value{

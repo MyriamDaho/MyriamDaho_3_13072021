@@ -1,5 +1,5 @@
 @mixin boxShadow{
-    box-shadow:  0px 3px 10px #e5e5e5;
+    box-shadow:  3px 3px 10px #bfbfbf;
 }
 
 @mixin flexColumn{
@@ -12,3 +12,22 @@
     flex-direction: row;
     align-items: center;
 }
+
+
+
+@mixin tablet{
+    @media screen and(min-width:map-get($breakpoints,tablet))
+        {@content;
+    }      
+}   
+@mixin Medium-screen{
+    @media screen and(min-width:map-get($breakpoints,medium-screen)) 
+      {@content;
+    }  
+}
+@mixin Large-screen{
+    @media screen and(min-width:map-get($breakpoints,large-screen))
+     { @content;   
+    }
+}
+    

@@ -33,6 +33,19 @@ h2 {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+@media screen and (min-width: 992px) {
+  h2 {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+@media screen and (min-width: 1268px) {
+  h2 {
+    width: 300px;
+  }
+}
 
 h3 {
   font-size: 1em;
@@ -72,6 +85,16 @@ ul {
   margin-inline-end: 0px;
   padding-inline-start: 0px;
 }
+@media screen and (min-width: 992px) {
+  ul {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1268px) {
+  ul {
+    gap: 20px;
+  }
+}
 
 p {
   display: block;
@@ -92,9 +115,26 @@ p {
   width: 60%;
   color: #ffffff;
   background: linear-gradient(to top, #9356dc, #ff79da);
-  margin: 20px 70px 30px 70px;
+  margin: 20px 70px;
   font-size: 1em;
-  box-shadow: 0px 3px 10px #e5e5e5;
+  box-shadow: 3px 3px 10px #bfbfbf;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 35%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .btn {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 1268px) {
+  .btn {
+    width: 20%;
+    font-size: 1.3em;
+  }
 }
 
 .logo {
@@ -104,6 +144,11 @@ p {
   padding: 15px;
   width: 70%;
   margin-left: 30px;
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 50%;
+  }
 }
 
 .arrow {
@@ -120,15 +165,24 @@ footer .footer_title {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 20px;
   color: #ffffff;
   font-family: shrikhand, sans-serif;
-  font-weight: lighter;
+  font-weight: 500;
   padding-bottom: 0px;
   margin-top: 0px;
 }
-footer footer ul {
+footer footer, footer ul {
   padding-left: 0px;
+}
+@media screen and (min-width: 992px) {
+  footer footer, footer ul {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 992px) and (min-width: 1268px) {
+  footer footer, footer ul {
+    gap: 0px;
+  }
 }
 footer a {
   text-decoration: none;
@@ -154,14 +208,33 @@ footer .fas {
   background-color: #f6f6f6;
   border-radius: 50px 50px 0 0;
   margin-top: -50px;
-  padding: 20px 10px;
+  padding: 20px 20px;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
 }
 .Menu__container .bloc_title {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 10px;
+}
+@media screen and (min-width: 768px) {
+  .Menu__container .bloc_title {
+    padding: 10px 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .bloc_title {
+    width: 100%;
+    padding: 0px 40px 0px 40px;
+  }
 }
 .Menu__container .bloc_title .title {
   font-family: "shrikhand", sans-serif;
@@ -177,6 +250,17 @@ footer .fas {
   flex-direction: column;
   gap: 15px;
   padding: 15px 0px;
+}
+@media screen and (min-width: 768px) {
+  .Menu__container .dish__container {
+    padding: 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container {
+    width: 30%;
+    padding-left: 0px;
+  }
 }
 .Menu__container .dish__container h3:before {
   content: "";
@@ -194,7 +278,7 @@ footer .fas {
   border-radius: 20px;
   border: 2px #bfbfbf;
   background-color: #ffffff;
-  box-shadow: 0px 3px 10px #e5e5e5;
+  box-shadow: 3px 3px 10px #bfbfbf;
 }
 .Menu__container .dish__container .dish .dish__item {
   display: flex;
@@ -203,6 +287,19 @@ footer .fas {
 }
 .Menu__container .dish__container .dish .dish__item .dish__plus {
   font-size: 0.9em;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish .dish__item .dish__plus {
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+@media screen and (min-width: 1268px) {
+  .Menu__container .dish__container .dish .dish__item .dish__plus {
+    width: 300px;
+  }
 }
 .Menu__container .dish__container .dish .value {
   display: flex;

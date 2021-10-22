@@ -7,7 +7,18 @@ border-radius: 50px;
  width: 60%;
  color:$textnumber-color;
  background:linear-gradient(to top,#9356dc,#ff79da);
- margin:20px 70px  30px 70px;
+ margin:20px 70px;
 font-size: map-get($fontSize,text);
 @include boxShadow;
+@include tablet{
+    width: 35%;
+    margin:auto;
+}
+@include Medium-screen{
+    width: 25%;
+}
+@include Large-screen{
+    width: 20%;
+    font-size: 1.3em;
+}
 }
