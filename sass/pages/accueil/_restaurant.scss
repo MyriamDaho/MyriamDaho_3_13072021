@@ -1,42 +1,48 @@
   .rst__area{
     @include flexColumn;
     background-color: $backgroundcolor-primary;
-    padding:40px 20px;
+    padding:40px 0px;
+    width: 100%;
+    
         
       .rst__title{
-      padding: 0px;
+      padding: 10px 25px;
       font-size: map-get($fontSize, heading);     
       }
 
       .rst__container{
       @include flexColumn;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding: 10px 20px;
+      width: auto;
       gap:20px;
       @include tablet{
-        flex-flow: wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      @include Medium-screen{
+        justify-content: center;
+        width: 95%;
       }
       @include Large-screen{
         flex-direction: row;
-        flex-flow: nowrap;
-        width: 100%;
-      }
-          .rst__bloc{
-          @include flexColumn;
-          gap: 20px;
-          width: 100%;
-          @include tablet{
-            flex-direction: row;
-          }
+        justify-content: space-evenly;
+      }    
               .rst__card{
               position: relative;
               border-radius: $borderRadius;
-              @include boxShadow;
+               @include boxShadow;
               background-color: $backgroundcolor-secondary;
-              @include tablet{
-                width:100%
-              }
-                  .pic{
+               @include tablet{
+                width: 48%;
+               }
+               @include Large-screen{
+                 display:flex;
+                 flex-direction: column;
+                 width: 23%;
+               }
+                 
+               .pic{
                   display: flex;
                   width: 100%;
                   }
@@ -47,33 +53,23 @@
                   width: 100%;
                   height: 160px;
                   }
-              }
-    
+                  
                   .details{
-                  @include flexColumn;       
+                  @include flexRowCenter;
+                  justify-content: space-between;  
                   padding: 10px 15px; 
-                
-                        .heart-empty{
-                        position: absolute;
-                        right: map-get($fontSize, text);
-                        bottom: map-get($fontSize, title);
-                        font-size: 1.4em;
-                        color:#777777;
-                        } 
-                        .heart-full{
-                            position: absolute;
-                            opacity: 0;
-                            right: map-get($fontSize, text);
-                            bottom: map-get($fontSize, title);
-                            font-size: 1.4em;
-                            color:#777777;
-                        }    
+                  width :unset;
+                  .legend{
+                    @include flexColumn
+                  }
+                       @include heart;  
                   
              }                        
                         
             }
-        }
-      }   
+       }
+} 
+        
                      
       .new{
         background-color:$color-tertiary;
