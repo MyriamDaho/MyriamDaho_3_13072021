@@ -435,36 +435,38 @@ footer .fas {
 
 .loader {
   position: fixed;
+  left: 0;
+  top: 0;
   background-color: #f6f6f6;
   height: 100%;
   width: 100%;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 2s forwards 5s;
+}
+.loader_cercle {
   width: 120px;
   height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
+  border: 10px solid transparent;
   border-radius: 50%;
-  border-top: 16px solid #ff0099;
-  border-right: 16px solid #f569c6;
-  border-bottom: 16px solid #ff79da;
-  border-left: 16px solid #9356dc;
-  animation: spin 2s linear infinite;
+  border-top: 10px solid #ff0099;
+  border-right: 10px solid #f569c6;
+  border-bottom: 10px solid #ff79da;
+  border-left: 10px solid #9356dc;
+  animation: spin 2s forwards 5s;
 }
 
 @keyframes spin {
   0% {
+    opacity: 1;
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-  }
-  0% {
-    opacity: 1;
-  }
-  100% {
     opacity: 0;
+    transform: rotate(360deg);
+    visibility: hidden;
   }
 }
 .Menu__pic img {
