@@ -4,6 +4,7 @@ header{
 }
 body{
     @include flexColumn;
+    justify-content: center;
     font-family: $font-roboto;
     box-sizing: border-box;
     width: 100%;
@@ -20,21 +21,13 @@ h1{
   font-size:map-get($fontSize,heading);
 }
  
-h2{
-  font-size:map-get($fontSize,title);
-  display: block;
-   margin-top: 5px;
-   margin-bottom : 5px; 
-   @include Medium-screen{
-     width:200px;
-     overflow:hidden;
-     text-overflow: ellipsis;
-     white-space: nowrap;
-   }
-   @include Large-screen{
-     width: 300px;
-   }    
- }
+     
+  @include Medium-screen;     
+   
+   @include Large-screen;
+    
+     
+ 
 
    
 h3{

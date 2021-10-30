@@ -5,6 +5,7 @@
         position: absolute;
         bottom:30px;
         right:30px;
+        font-size: 1.5em;
     }
     .far{
         z-index: 2;
@@ -31,8 +32,9 @@
         transform: scale(1);
         animation: transform 0.4s cubic-bezier(0.23, 1, 0.320, 1);
     }
+   
+    
 }
-
 
 @keyframes heart-full{
     0%{
@@ -42,3 +44,16 @@
         transform:scale(1)
     }
 }
+
+    
+  @keyframes slide-left{
+      0%{
+          transform:translateX(0)
+      }
+      100%{
+          transform: (-70px);
+      }
+  }    
+        
+    
+  

@@ -8,6 +8,7 @@ header {
 body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   font-family: "roboto", sans-serif;
   box-sizing: border-box;
   width: 100%;
@@ -25,26 +26,6 @@ h1 {
   margin-block-start: 0px;
   margin-block-end: 0px;
   font-size: 1.5em;
-}
-
-h2 {
-  font-size: 1.1em;
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-@media screen and (min-width: 992px) {
-  h2 {
-    width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
-@media screen and (min-width: 1268px) {
-  h2 {
-    width: 300px;
-  }
 }
 
 h3 {
@@ -147,6 +128,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .logo {
+    padding: 15px 0px;
     width: 50%;
   }
 }
@@ -212,11 +194,10 @@ footer .fas {
 }
 @media screen and (min-width: 992px) {
   .Menu__container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
+    justify-content: space-between;
   }
 }
 .Menu__container .bloc_title {
@@ -240,10 +221,57 @@ footer .fas {
   font-family: "shrikhand", sans-serif;
   font-size: 1.7em;
 }
-.Menu__container .bloc_title .heart {
+.Menu__container .bloc_title .rest__heart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Menu__container .bloc_title .rest__heart .fa-heart {
+  position: absolute;
+  right: 30px;
   font-size: 1.5em;
-  color: #777;
-  padding: 0px 20px;
+}
+@media screen and (min-width: 768px) {
+  .Menu__container .bloc_title .rest__heart .fa-heart {
+    right: 50px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 992px) {
+  .Menu__container .bloc_title .rest__heart .fa-heart {
+    right: 30px;
+  }
+}
+.Menu__container .bloc_title .rest__heart .far {
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+.Menu__container .bloc_title .rest__heart .far:hover {
+  opacity: 0;
+}
+.Menu__container .bloc_title .rest__heart .far:hover + .fas {
+  opacity: 1;
+  animation: heart-full 0.4s linear both;
+}
+.Menu__container .bloc_title .rest__heart .fas {
+  background: linear-gradient(50deg, #ff79da 0%, #9356dc 100%);
+  background-clip: content-box;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  z-index: 1;
+  transform-origin: 50% bottom;
+  transform: scale(1);
+  animation: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes heart-full {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .Menu__container .dish__container {
   display: flex;
@@ -270,48 +298,425 @@ footer .fas {
   border-bottom: 3px solid #99e2d0;
   padding: 2px;
 }
-.Menu__container .dish__container .dish {
+.Menu__container .dish__container .dish-1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: auto;
+  width: 100%;
   border-radius: 20px;
   border: 2px #bfbfbf;
   background-color: #ffffff;
   box-shadow: 3px 3px 10px #bfbfbf;
+  overflow: hidden;
+  animation: menu-display 0.4s cubic-bezier(0, 0.01, 0, 0.01) both;
 }
-.Menu__container .dish__container .dish .dish__item {
+.Menu__container .dish__container .dish-1:hover > .value {
+  animation: slide-left 0.45s ease-in-out forwards, rotate;
+}
+.Menu__container .dish__container .dish-1:hover .checkicon {
+  transform: rotate(1turn);
+  transition: transform 0.8s ease-in-out;
+}
+.Menu__container .dish__container .dish-1:hover .dish__plus {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.Menu__container .dish__container .dish-1 .dish__item {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
+  width: 60%;
   padding: 10px;
 }
-.Menu__container .dish__container .dish .dish__item .dish__plus {
-  font-size: 0.9em;
+.Menu__container .dish__container .dish-1 .dish__item h2 {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+.Menu__container .dish__container .dish-1 .dish__item .dish__plus {
+  font: size 0.9em;
 }
 @media screen and (min-width: 992px) {
-  .Menu__container .dish__container .dish .dish__item .dish__plus {
-    width: 200px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+  .Menu__container .dish__container .dish-1 .dish__item .dish__plus {
+    font-size: 0.79em;
   }
 }
 @media screen and (min-width: 1268px) {
-  .Menu__container .dish__container .dish .dish__item .dish__plus {
+  .Menu__container .dish__container .dish-1 .dish__item .dish__plus {
     width: 300px;
+    font-size: 0.9em;
   }
 }
-.Menu__container .dish__container .dish .value {
+.Menu__container .dish__container .dish-1 .value {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   font-size: 1em;
   font-weight: bold;
+  transform: translateX(70px);
 }
-.Menu__container .dish__container .dish .value .price {
-  margin: 8px 20px;
+.Menu__container .dish__container .dish-1 .value .starter__price {
+  margin: 10px;
   font-weight: bold;
   font-size: 1em;
+  position: relative;
+  left: -10px;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-1 .value .starter__price {
+    top: -5px;
+    left: 0px;
+  }
+}
+@media screen and (min-width: 992px) and (min-width: 1268px) {
+  .Menu__container .dish__container .dish-1 .value .starter__price {
+    left: -20px;
+  }
+}
+.Menu__container .dish__container .dish-1 .value .main__price {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  left: -10px;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-1 .value .main__price {
+    top: -4px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    position: relative;
+    left: -18px;
+  }
+}
+.Menu__container .dish__container .dish-1 .value .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  background-color: #99e2d0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.Menu__container .dish__container .dish-1 .value .checkbox .checkicon {
+  color: #f6f6f6;
+  font-size: 1.5em;
+}
+.Menu__container .dish__container .dish-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 20px;
+  border: 2px #bfbfbf;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 10px #bfbfbf;
+  overflow: hidden;
+  animation: menu-display 0.4s cubic-bezier(0, 0.01, 0, 0.01) both;
+  animation-delay: 1s;
+}
+.Menu__container .dish__container .dish-2:hover > .value {
+  animation: slide-left 0.45s ease-in-out forwards, rotate;
+}
+.Menu__container .dish__container .dish-2:hover .checkicon {
+  transform: rotate(1turn);
+  transition: transform 0.8s ease-in-out;
+}
+.Menu__container .dish__container .dish-2:hover .dish__plus {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.Menu__container .dish__container .dish-2 .dish__item {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  width: 60%;
+  padding: 10px;
+}
+.Menu__container .dish__container .dish-2 .dish__item h2 {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+.Menu__container .dish__container .dish-2 .dish__item .dish__plus {
+  font-size: 0.9em;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-2 .dish__item .dish__plus {
+    font-size: 0.79em;
+  }
+}
+@media screen and (min-width: 1268px) {
+  .Menu__container .dish__container .dish-2 .dish__item .dish__plus {
+    width: 300px;
+  }
+}
+.Menu__container .dish__container .dish-2 .value {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 1em;
+  font-weight: bold;
+  transform: translateX(70px);
+}
+.Menu__container .dish__container .dish-2 .value .starter__price {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  left: -10px;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-2 .value .starter__price {
+    top: -5px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    position: relative;
+    left: -25px;
+  }
+}
+.Menu__container .dish__container .dish-2 .value .main__price {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  left: -10px;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-2 .value .main__price {
+    top: -4px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    position: relative;
+    left: -18px;
+  }
+}
+.Menu__container .dish__container .dish-2 .value .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  background-color: #99e2d0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.Menu__container .dish__container .dish-2 .value .checkbox .checkicon {
+  color: #f6f6f6;
+  font-size: 1.5em;
+}
+.Menu__container .dish__container .dish-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 20px;
+  border: 2px #bfbfbf;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 10px #bfbfbf;
+  overflow: hidden;
+  animation: menu-display 0.4s cubic-bezier(0, 0.01, 0, 0.01) both;
+  animation-delay: 2s;
+}
+.Menu__container .dish__container .dish-3:hover > .value {
+  animation: slide-left 0.45s ease-in-out forwards, rotate;
+}
+.Menu__container .dish__container .dish-3:hover .checkicon {
+  transform: rotate(1turn);
+  transition: transform 0.8s ease-in-out;
+}
+.Menu__container .dish__container .dish-3:hover .dish__plus {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.Menu__container .dish__container .dish-3 .dish__item {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  width: 60%;
+  padding: 10px;
+}
+.Menu__container .dish__container .dish-3 .dish__item h2 {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+.Menu__container .dish__container .dish-3 .dish__item .dish__plus {
+  font-size: 0.9em;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-3 .dish__item .dish__plus {
+    font-size: 0.79em;
+  }
+}
+@media screen and (min-width: 1268px) {
+  .Menu__container .dish__container .dish-3 .dish__item .dish__plus {
+    width: 300px;
+  }
+}
+.Menu__container .dish__container .dish-3 .value {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 1em;
+  font-weight: bold;
+  transform: translateX(70px);
+}
+.Menu__container .dish__container .dish-3 .value .starter__price {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  left: -10px;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-3 .value .starter__price {
+    top: -5px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    position: relative;
+    left: -25px;
+  }
+}
+.Menu__container .dish__container .dish-3 .value .main__price {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  left: -10px;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-3 .value .main__price {
+    top: -4px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    position: relative;
+    left: 5px;
+  }
+}
+@media screen and (min-width: 1268px) {
+  .Menu__container .dish__container .dish-3 .value .main__price {
+    left: -18px;
+  }
+}
+.Menu__container .dish__container .dish-3 .value .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  background-color: #99e2d0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.Menu__container .dish__container .dish-3 .value .checkbox .checkicon {
+  color: #f6f6f6;
+  font-size: 1.5em;
+}
+.Menu__container .dish__container .dish-4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 20px;
+  border: 2px #bfbfbf;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 10px #bfbfbf;
+  overflow: hidden;
+  animation: menu-display 0.4s cubic-bezier(0, 0.01, 0, 0.01) both;
+  animation-delay: 3s;
+}
+.Menu__container .dish__container .dish-4:hover > .value {
+  animation: slide-left 0.45s ease-in-out forwards, rotate;
+}
+.Menu__container .dish__container .dish-4:hover .checkicon {
+  transform: rotate(1turn);
+  transition: transform 0.8s ease-in-out;
+}
+.Menu__container .dish__container .dish-4:hover .dish__plus {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.Menu__container .dish__container .dish-4 .dish__item {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  width: 60%;
+  padding: 10px;
+}
+.Menu__container .dish__container .dish-4 .dish__item h2 {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+.Menu__container .dish__container .dish-4 .dish__item .dish__plus {
+  font-size: 0.9em;
+}
+@media screen and (min-width: 1268px) {
+  .Menu__container .dish__container .dish-4 .dish__item .dish__plus {
+    width: 300px;
+  }
+}
+.Menu__container .dish__container .dish-4 .value {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 1em;
+  font-weight: bold;
+  transform: translateX(70px);
+}
+.Menu__container .dish__container .dish-4 .value .price {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  left: -10px;
+}
+.Menu__container .dish__container .dish-4 .value .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  background-color: #99e2d0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.Menu__container .dish__container .dish-4 .value .checkbox .checkicon {
+  color: #f6f6f6;
+  font-size: 1.5em;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(70px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes menu-display {
+  0% {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /*# sourceMappingURL=restaurant.css.map */

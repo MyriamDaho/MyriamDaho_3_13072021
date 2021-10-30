@@ -15,22 +15,92 @@
     flex-direction: row;
     align-items: center;
 }
+@mixin overFlow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
+@mixin h2($font-size){
+    display: block;
+    margin-top: 5px;
+    margin-bottom : 5px; 
+    font-size: $font-size;
+    @content;
+} 
+
+@mixin Dishcard {
+    @include flexRow; 
+   justify-content: space-between;
+   width:100%;
+   border-radius: $borderRadius;
+   border: 2px #bfbfbf;
+   background-color: $backgroundcolor-secondary;
+   @include boxShadow;
+   overflow: hidden;
+   animation: menu-display 0.4s cubic-bezier(0, 0.01, 0, 0.01) both;
+        
+}
+
+@mixin Dish {
+    @include flexColumn;
+    white-space: nowrap;
+    width: 60%;
+    padding:10px;
+}
+@mixin value{
+    display: flex; 
+    flex-direction: row;      
+    align-items: flex-end;
+    font-size: map-get($fontSize, text);
+    font-weight: bold; 
+    transform: translateX(70px);
+    @content;
+}
+
+@mixin price($size){
+    margin:  10px;
+    font-weight: bold;
+    font-size: map-get($fontSize, text);
+    position:relative;
+    left: $size;
+    @content;
+}
+
+@mixin checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color: #99e2d0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+      @content;                                 
+}
+
+@mixin checkIcon {
+    
+    color: $backgroundcolor-primary;
+    font-size: map-get($fontSize,heading);
+    @content;   
+}
 
 
 @mixin tablet{
     @media screen and(min-width:map-get($breakpoints,tablet))
-        {@content;
-    }      
+ {       @content;
+}       
 }   
+   
 @mixin Medium-screen{
-    @media screen and(min-width:map-get($breakpoints,medium-screen)) 
-      {@content;
-    }  
+    @media screen and(min-width:map-get($breakpoints,medium-screen)){
+      @content;
+}    
 }
 @mixin Large-screen{
-    @media screen and(min-width:map-get($breakpoints,large-screen))
-     { @content;   
+    @media screen and(min-width:map-get($breakpoints,large-screen)){
+      @content;  
     }
 }
-    
