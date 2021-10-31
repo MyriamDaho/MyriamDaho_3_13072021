@@ -1,50 +1,53 @@
 .loader{
-    
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: $backgroundcolor-primary;
+
+ position:fixed;
+ background: linear-gradient(35deg, #99e2d0,#a8f7e3,#f5ade0,#ff79da,#c49ff1,#9356dc);
+  left:0;
+  top:0;
   height:100%;
   width: 100%;
   z-index: 10;
   display: flex;
   justify-content: center;
-  align-items: center;
-  animation: spin 2s forwards 5s;
-  
- 
-  &_cercle{
-    
-   
-    width: 120px;
-    height: 120px;
-    border: 10px solid transparent;
-    border-radius: 50%;
-    border-top: 10px solid #ff0099;
-    border-right: 10px solid #f569c6  ;
-    border-bottom: 10px solid $color-secondary;
-    border-left: 10px solid $color-primary;
-    animation: spin 2s forwards 5s;
-  }
+  align-items: center;  
+  animation:   letters 3s both 5s; 
 }
 
 
-
-@keyframes spin {
-  0% { 
-    opacity:1;
-    transform: rotate(0deg);
-  }
+.loader__move { 
   
-  100% { 
-    opacity:0;
-    transform: rotate(360deg);
-    visibility: hidden;
-   }
+text-align:center; 
+font-family:shrikhand, sans-serif;
+white-space:normal; 
+font-size:4em; 
+font-weight:300; 
+display: flex;
+justify-content: center;
+align-items: center;
 
- 
 }
 
+.span {opacity:1;}
+.letter01 {animation:letters 3s ease 0s both;}
+.letter02 {animation:letters 3s ease 0.5s both;}
+.letter03 {animation:letters 3s ease 1s both;}
+.letter04 {animation:letters 3s ease 1.5s both;}
+.letter05 {animation:letters 3s ease 2s both;}
+.letter06 {animation:letters 3s ease 2.5s both;}
+.letter07 {animation:letters 3s ease 3s both;}
+.letter08 {animation:letters 3s ease 3.5s both;}
+
+
+
+@keyframes letters {
+	0% {opacity:1.0;
+  transform: rotate(0deg);
+}
+	100% {opacity:0.1;
+  transform: rotate(360deg);
+  visibility: hidden;
+  }
+}
 
 
 

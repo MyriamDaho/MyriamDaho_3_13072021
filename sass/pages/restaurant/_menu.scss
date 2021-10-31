@@ -132,7 +132,7 @@
                     }
                            
                     .dish__plus{
-                      font: size 0.9em;  
+                      font-size: 0.9em;  
                       @include Medium-screen{
                           font-size: 0.79em;
                       }                                                  
@@ -146,10 +146,10 @@
                 @include value;
 
                     .starter__price{
-                      @include price(-10px);
+                      @include price(-5px);
                       @include Medium-screen{
                           top: -5px;
-                          left: 0px;
+                          left:-25px;
                           @include Large-screen{
                               left: -20px;
                           }
@@ -159,8 +159,7 @@
                           @include price (-10px);
                           @include Medium-screen{
                               top:-4px;
-                              @include price(-18px);
-                          }
+                              left:-25px;                          }
                       }
                     
                     .checkbox{
@@ -211,10 +210,10 @@
                     @include value;
     
                         .starter__price{
-                          @include price(-10px);
+                          @include price(-5px);
                           @include Medium-screen{
                             top: -5px;
-                          @include price(-25px);  
+                            left:-20px;  
                           }
                         }
 
@@ -222,7 +221,7 @@
                             @include price (-10px);
                             @include Medium-screen{
                                 top: -4px;
-                                @include price(-18px);
+                                left:-2px;
                             }
                         }
                         .checkbox{
@@ -281,10 +280,10 @@
                             }
 
                             .main__price{
-                                @include price (-10px);
+                                @include price (-12px);
                                 @include Medium-screen{
                                     top:-4px;
-                                    @include price(5px);
+                                    left:-27px;
                                 }
                                     @include Large-screen{
                                         left:-18px;
@@ -333,8 +332,11 @@
                             .value{
                             @include value;
             
-                                .price{
+                                .starter__price{
                                   @include price(-10px);
+                                  @include Medium-screen{
+                                 left: -27px;
+                                }
                                 }
                                 .checkbox{
                                   @include checkbox;

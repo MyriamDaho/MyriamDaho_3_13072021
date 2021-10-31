@@ -145,7 +145,6 @@ p {
 @media screen and (min-width: 768px) {
   .logo {
     padding: 15px 0px;
-    width: 50%;
   }
 }
 
@@ -352,7 +351,7 @@ footer .fas {
   font-size: 1em;
 }
 .Menu__container .dish__container .dish-1 .dish__item .dish__plus {
-  font: size 0.9em;
+  font-size: 0.9em;
 }
 @media screen and (min-width: 992px) {
   .Menu__container .dish__container .dish-1 .dish__item .dish__plus {
@@ -378,12 +377,12 @@ footer .fas {
   font-weight: bold;
   font-size: 1em;
   position: relative;
-  left: -10px;
+  left: -5px;
 }
 @media screen and (min-width: 992px) {
   .Menu__container .dish__container .dish-1 .value .starter__price {
     top: -5px;
-    left: 0px;
+    left: -25px;
   }
 }
 @media screen and (min-width: 992px) and (min-width: 1268px) {
@@ -401,11 +400,7 @@ footer .fas {
 @media screen and (min-width: 992px) {
   .Menu__container .dish__container .dish-1 .value .main__price {
     top: -4px;
-    margin: 10px;
-    font-weight: bold;
-    font-size: 1em;
-    position: relative;
-    left: -18px;
+    left: -25px;
   }
 }
 .Menu__container .dish__container .dish-1 .value .checkbox {
@@ -486,16 +481,12 @@ footer .fas {
   font-weight: bold;
   font-size: 1em;
   position: relative;
-  left: -10px;
+  left: -5px;
 }
 @media screen and (min-width: 992px) {
   .Menu__container .dish__container .dish-2 .value .starter__price {
     top: -5px;
-    margin: 10px;
-    font-weight: bold;
-    font-size: 1em;
-    position: relative;
-    left: -25px;
+    left: -20px;
   }
 }
 .Menu__container .dish__container .dish-2 .value .main__price {
@@ -508,11 +499,7 @@ footer .fas {
 @media screen and (min-width: 992px) {
   .Menu__container .dish__container .dish-2 .value .main__price {
     top: -4px;
-    margin: 10px;
-    font-weight: bold;
-    font-size: 1em;
-    position: relative;
-    left: -18px;
+    left: -2px;
   }
 }
 .Menu__container .dish__container .dish-2 .value .checkbox {
@@ -610,16 +597,12 @@ footer .fas {
   font-weight: bold;
   font-size: 1em;
   position: relative;
-  left: -10px;
+  left: -12px;
 }
 @media screen and (min-width: 992px) {
   .Menu__container .dish__container .dish-3 .value .main__price {
     top: -4px;
-    margin: 10px;
-    font-weight: bold;
-    font-size: 1em;
-    position: relative;
-    left: 5px;
+    left: -27px;
   }
 }
 @media screen and (min-width: 1268px) {
@@ -695,12 +678,17 @@ footer .fas {
   font-weight: bold;
   transform: translateX(70px);
 }
-.Menu__container .dish__container .dish-4 .value .price {
+.Menu__container .dish__container .dish-4 .value .starter__price {
   margin: 10px;
   font-weight: bold;
   font-size: 1em;
   position: relative;
   left: -10px;
+}
+@media screen and (min-width: 992px) {
+  .Menu__container .dish__container .dish-4 .value .starter__price {
+    left: -27px;
+  }
 }
 .Menu__container .dish__container .dish-4 .value .checkbox {
   display: flex;
