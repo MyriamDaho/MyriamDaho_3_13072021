@@ -1,0 +1,38 @@
+.loader{
+
+ position:fixed;
+ background: linear-gradient(35deg, #99e2d0,#a8f7e3,#f5ade0,#ff79da,#c49ff1,#9356dc);
+  left:0;
+  top:0;
+  height:100%;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  animation:   letters 3s both 5s; 
+}
+
+
+.loader__move { 
+  
+text-align:center; 
+font-family:shrikhand, sans-serif;
+white-space:normal; 
+font-size:4em; 
+font-weight:300; 
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+
+
+
+
+
+
+
+
+
