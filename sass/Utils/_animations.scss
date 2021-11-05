@@ -1,9 +1,30 @@
-   
+  //* animation loader *//      
+  .span {opacity:1;}
+.letter01 {animation:letters 3s ease 0s both;}
+.letter02 {animation:letters 3s ease 0.5s both;}
+.letter03 {animation:letters 3s ease 1s both;}
+.letter04 {animation:letters 3s ease 1.5s both;}
+.letter05 {animation:letters 3s ease 2s both;}
+.letter06 {animation:letters 3s ease 2.5s both;}
+.letter07 {animation:letters 3s ease 3s both;}
+.letter08 {animation:letters 3s ease 3.5s both;}
 
-@mixin heart {
+  
+  @keyframes letters {
+	0% {opacity: 1 ;
+       transform: rotate(0deg);
+}
+	100% {opacity: 0;
+         transform: rotate(360deg);
+         visibility:hidden;
+    }
+} 
+
+//* animation coeur*//
+@mixin heart($size) {
     .fa-heart{
         position: absolute;
-        bottom:30px;
+        bottom: $size;
         right:30px;
         font-size: 1.5em;
     }
@@ -32,8 +53,7 @@
         transform: scale(1);
         animation: transform 0.4s cubic-bezier(0.23, 1, 0.320, 1);
     }
-   
-    
+   @content ;
 }
 
 @keyframes heart-full{
@@ -45,15 +65,25 @@
     }
 }
 
-    
-  @keyframes slide-left{
-      0%{
-          transform:translateX(0)
-      }
-      100%{
-          transform: (-70px);
-      }
-  }    
-        
-    
+   //* animation checkbox *// 
+   @keyframes slide-left{
+    0%{
+        transform:translateX(70px);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+  
+  //*animation menu *//
+  @keyframes menu-display{
+    0%{
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
   

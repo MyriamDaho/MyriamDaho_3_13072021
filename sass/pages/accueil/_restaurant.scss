@@ -66,15 +66,12 @@
                       @include h2(map-get($fontSize,title))
                     }
                     }
-                    @include heart;  
+                    @include heart(30px);  
                   }
               }                        
-                        
-      }
-      
- 
-        
-                     
+                       
+      }    
+                           
       .new{
         background-color:$color-tertiary;
         color:$textnew-color;
