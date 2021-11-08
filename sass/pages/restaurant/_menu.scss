@@ -26,7 +26,7 @@
           @include Medium-screen{
             width:100%;
             padding: 0px 40px 0px 40px;
-            }
+          }
 
             .title{
             font-family:$font-shrikhand;
@@ -61,30 +61,32 @@
                     @include Dish;
                                                          
                     h2{
-                     @include h2(map-get($fontSize,text))
+                     @include h2(map-get($fontSize,text1))
                     }
                                   
                     .dish__plus{
-                      font-size:0.9em;                                                                                                            
+                      font-size:map-get($fontSize,text2)                                                                                                            
                     }
                 }
                                                       
                 .value{
                  @include value;
-
-                    .starter__price{
-                      @include price(-5px);
-                      @include Medium-screen{
-                          top: -5px;
-                          left:-20px;
-                      }
-                      @include Large-screen{
-                          left: -10px;
-                      }                    
+                    .price{
+                         @include Price(unset);                                         
+                         @include tablet{
+                            left:-10px;
+                         }
+                         @include Medium-screen{
+                            top: -5px;
+                            left:-20px;
+                         }
+                         @include Large-screen{
+                            left: -10px;
+                         }                    
                     }
                       
                     .checkbox{
-                      @include checkbox;
+                      @include checkBox;
                         
                       .checkicon{
                            @include checkIcon;
@@ -94,402 +96,69 @@
             }                                         
        
             .dish-2{
-                @include Dishcard;
+                @extend .dish-1;
                 animation-delay: 1s;
-                @include dish-hover;  
+
+            }
+
+            .dish-3{
+
+                @include Dishcard;
+                @include dish-hover;
+                animation-delay: 2s;
 
                 .dish__item{
                     @include Dish;
                                                          
                     h2{
-                     @include h2(map-get($fontSize,text))
+                     @include h2(map-get($fontSize,text1))
                     }
                                   
-                    .dish__plus{                    
-                      font-size:0.9em;                       
+                    .dish__plus{
+                      font-size:map-get($fontSize,text2)                                                                                                            
                     }
-                } 
+                }
                 .value{
                     @include value;
-    
-                    .starter__price{
-                        @include price(-5px);
-                        @include Medium-screen{
-                          top: -5px;
-                          left:-20px;  
+                       .price{
+                            @include Price(-5px);                                         
+                            @include tablet{
+                               left:-10px;
+                            }
+                            @include Medium-screen{
+                               top: -5px;
+                               left:-20px;
+                            }
+                            @include Large-screen{
+                               left: -10px;
+                            }                    
                         }
-                        @include Large-screen{
-                          left:-10px;
+                         
+                  .checkbox{
+                      @include checkBox;
+                   
+                        .checkicon{
+                            @include checkIcon;
                         }
-                    }
-                        
-                    .checkbox{
-                      @include checkbox;
-                            
-                        .checkicon{
-                          @include checkIcon;
-                        } 
-                    }         
-                }    
-            }    
-       
-            .dish-3{
-              @include Dishcard;
-              animation-delay: 2s;
-              @include dish-hover;                      
-                      
-                .dish__item{
-                  @include Dish;
-                                                             
-                    h2{
-                     @include h2(map-get($fontSize,text))
-                    }
-                                      
-                    .dish__plus{
-                      font-size:0.9em; 
-                    }  
-                }          
-                .value{
-                  @include value;
-        
-                    .starter__price{
-                      @include price(-5px);
-                      @include Medium-screen{
-                        top: -5px;
-                        left: -20px;
-                      } 
-                      @include Large-screen{
-                        left:-10px;
-                      } 
-                    }
-                            
-                    .checkbox{
-                      @include checkbox;
-                                
-                        .checkicon{
-                          @include checkIcon;
-                           
-                        }         
-                    }    
+                    }       
                 }
-            }    
-           
+            }                      
             .dish-4{
-              @include Dishcard;
-              animation-delay: 3s;
-              @include dish-hover;
-                           
-                .dish__item{
-                  @include Dish;
-                                                                 
-                    h2{
-                      @include h2(map-get($fontSize,text))
-                    }
-                                          
-                    .dish__plus{
-                      font-size:0.9em; 
-                    }
-                }             
-                .value{
-                  @include value;
-            
-                    .starter__price{
-                      @include price(-5px);
-                      @include Medium-screen{
-                        left: -20px;
-                      }
-                      @include Large-screen{
-                        left:-15px;
-                      }
-                    }
-
-                    .checkbox{                                 
-                      @include checkbox;
-                                    
-                        .checkicon{
-                          @include checkIcon;
-                        } 
-                    }         
-                }    
+              @extend .dish-3;
+              animation-delay: 3s;                                                                       
             }
         } 
 
         .main__container{
-            @include Dishcontainer;
-            @include tablet{               
-             padding: 20px;          
-            }
-            @include Medium-screen{
-             width:100%;
-             padding-left: 0px;
-            }
-            @include Large-screen{
-                width:30%;
-            }  
-
-            .dish-1{
-              @include Dishcard;
-              @include dish-hover;           
-                
-                .dish__item{
-                 @include Dish;
-                              
-                    h2{
-                     @include h2(map-get($fontSize,text))
-                    }
-                           
-                    .dish__plus{
-                      font-size: 0.9em;  
-                    }
-                   
-                } 
-
-                .value{
-                @include value;
-                    
-                    .main__price{
-                      @include price (-5px);                                             
-                      @include Medium-screen{
-                        top:-4px;
-                        left: -20px;
-                      } 
-                      @include Large-screen{
-                        left:-10px;
-                      }                                             
-                    }
-                      
-                    .checkbox{
-                      @include checkbox;
-                        
-                      .checkicon{
-                        @include checkIcon;
-                      } 
-                    }         
-                }    
-            }                                          
-       
-            .dish-2{
-              @include Dishcard;
-              animation-delay: 1s;
-              @include dish-hover;                    
-                  
-                .dish__item{
-                  @include Dish;
-                                                         
-                    h2{
-                     @include h2(map-get($fontSize,text))
-                    }
-                                  
-                    .dish__plus{
-                      font-size:0.9em;  
-                    }  
-                }
-
-                    .value{
-                      @include value;    
-                                                
-                        .main__price{
-                          @include price (-5px);                            
-                          @include Medium-screen{
-                            top: -4px;
-                            left:-20px;
-                          }
-                          @include Large-screen{
-                            left:-10px;
-                          }
-                        }
-                       
-                        .checkbox{
-                          @include checkbox;
-                            
-                           .checkicon{
-                             @include checkIcon;
-                           } 
-                        }         
-                }    
-                
-            }
-
-            .dish-3{
-              @include Dishcard;
-              animation-delay: 2s;
-              @include dish-hover;
-                       
-                .dish__item{
-                  @include Dish;
-                                                             
-                    h2{
-                     @include h2(map-get($fontSize,text))
-                    }
-                                      
-                    .dish__plus{
-                      font-size:0.9em; 
-                    }
-                }          
-                
-                .value{                     
-                  @include value;
-        
-                    .main__price{
-                      @include price (-5px);                                          
-                      @include Medium-screen{
-                        top:-4px;
-                        left:-20px;
-                      }
-                      @include Large-screen{
-                        left:-10px;
-                      }
-                    }
-                            
-                    .checkbox{
-                      @include checkbox;
-                                
-                        .checkicon{
-                          @include checkIcon;
-                        } 
-                    }
-                }             
-            }                                
+            @extend .starter__container                 
         }
 
         .dessert__container{
-          @include Dishcontainer;
-          @include tablet{
-            padding: 20px;          
-          }
-          @include Medium-screen{
-            width:100%;
-            padding-left: 0px;
-          }
-          @include Large-screen{
-            width:30%;
-          }
-
-            .dish-1{
-              @include Dishcard;
-              @include dish-hover;        
-                
-                .dish__item{
-                  @include Dish;
-                                                     
-                    h2{
-                     @include h2(map-get($fontSize,text))
-                    }
-                              
-                    .dish__plus{
-                      font-size:0.9em; 
-                    }
-                }
-
-                .value{
-                  @include value;
-
-                    .dessert__price{
-                      @include price (-5px);
-                      @include Medium-screen{
-                        left:-15px;
-                        margin: 15px; 
-                      }
-                      @include Large-screen{
-                        left:-10px;
-                      }
-                    }
-
-                    .checkbox{
-                      @include checkbox;
-                        
-                      .checkicon{
-                        @include checkIcon;
-                      } 
-                    }         
-                }    
-            }                                          
-       
-            .dish-2{
-              @include Dishcard;
-              animation-delay: 1s;
-              @include dish-hover;
-                      
-                .dish__item{
-                  @include Dish;
-                                                         
-                    h2{
-                     @include h2(map-get($fontSize,text))
-                    }
-                                  
-                    .dish__plus{
-                      font-size:0.9em; 
-                    }
-                }
-
-                .value{
-                  @include value;
-                            
-                    .dessert__price{
-                      @include price (-5px);
-                      @include Medium-screen{
-                        left:-15px;
-                        margin:15px;
-                      }
-                      @include Large-screen{
-                        left:-10px;
-                        }
-                    }
-                    .checkbox{
-                        @include checkbox;
-                            
-                          .checkicon{
-                            @include checkIcon;
-                          } 
-                    }         
-                }    
-            }    
-       
-            .dish-3{
-              @include Dishcard;
-              animation-delay: 2s;
-              @include dish-hover;
-                            
-                .dish__item{
-                  @include Dish;
-                                                             
-                    h2{
-                     @include h2(map-get($fontSize,text))
-                    }
-                                      
-                    .dish__plus{
-                      font-size:0.9em; 
-                    }
-                }
-
-                .value{
-                  @include value;
-                            
-                    .dessert__price{
-                      @include price (-12px);
-                      @include tablet{
-                        left:-5px;
-                      }
-                      @include Medium-screen{
-                        left:-15px;
-                        margin: 15px;
-                      }
-                      @include Large-screen{
-                        left:-10px;
-                      }
-                    }
-                    .checkbox{
-                      @include checkbox;
-                                
-                        .checkicon{
-                          @include checkIcon;
-                        } 
-                    }         
-                }    
-            } 
+            @extend .starter__container
+          
         }
-}
-                    
+    }
+                  
                               
                        
               

@@ -102,22 +102,23 @@
     display: flex; 
     flex-direction: row;      
     align-items: flex-end;
-    font-size: map-get($fontSize, text);
+    font-size: map-get($fontSize, text1);
     font-weight: bold; 
     transform: translateX(70px);
     @content;
 }
 
-@mixin price($size){
+@mixin Price($size){
     margin:  10px;
     font-weight: bold;
-    font-size: map-get($fontSize, text);
+    font-size: map-get($fontSize, text1);
+    left:$size;
     position:relative;
-    left: $size;
     @content;
 }
 
-@mixin checkbox{
+
+@mixin checkBox{
     display: flex;
     align-items: center;
     justify-content: center;

@@ -9,7 +9,9 @@ border-radius: 50px;
  background:linear-gradient(to top,#9356dc,#ff79da);
  margin:20px 70px;
 font-size: map-get($fontSize,text);
+text-decoration:none; 
 @include boxShadow;
+
 @include tablet{
     width: 35%;
     margin:auto;
@@ -22,3 +24,5 @@ font-size: map-get($fontSize,text);
     font-size: 1.3em;
 }
 }
+
+
